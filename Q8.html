@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script>
+        function email() {
+            if(document.getElementById("text").value==""){
+                alert("please enter Email")
+            }
+            var a = document.getElementById("text").value;
+            var b = a.indexOf("@");
+            var c = a.lastIndexOf(".");
+            if(b<1||c<b+2||c+2>a.length){
+                alert("Please enter valid Email")
+            }
+            var x = document.getElementById("pass").value;
+            var y = document.getElementById("pass1").value;
+            if(x!=y){
+                alert("Password is not same")
+            }
+        }
+    </script>
+</head>
+<body><fieldset><h1>Sign Up</h1>
+    <form>
+        Email: <input type="email" name="" id="text"><br><br>
+        Password: <input type="password" name="" id="pass"><br><br>
+        Re-Password: <input type="password" name="" id="pass1"><br><br>
+        <input type="submit" value="Submit" onclick="email()">
+    </form>
+</fieldset>
+</body>
+</html>

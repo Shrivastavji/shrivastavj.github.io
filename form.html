@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: beige;
+                text-align: center;
+            }
+            form{
+                font-size: 20px;
+            }
+        </style>
+         <script>
+            function formvalide(){
+            if(document.getElementById("fname").value=="" || document.getElementById("lname").value=="")
+            {
+                alert("Enter First name and last name");
+            }
+            var b=document.getElementById("phone").value;
+            if(isNaN(b)||b.length!=10||b=="")
+            {
+                alert("enter Valid mobile number");
+            
+            }
+            var a = document.getElementById("zip").value;
+            if(isNaN(a)||a.length!=6||a=="")
+            {
+                alert("Enter valid Pincode")
+            }
+            if(document.getElementById("pass").value=="")
+            {
+                alert("Enter the password");
+            }
+            if(document.getElementById("pass1").value=="")
+            {
+                alert("Enter the Re-Password");
+            }
+            if(document.getElementById("dob").value=="")
+            {
+                alert("Enter Date of Birth");
+            }
+            if(document.getElementById("country").value=="")
+            {
+                alert("Select Country");
+            }
+            var c = document.getElementById("pass").value;
+            var d = document.getElementById("pass1").value;
+            if(c!=d){
+                alert("Password does not match");
+            }
+            var x = document.getElementById("email").value;
+            var y = x.indexOf("@");
+            var z = x.lastIndexOf(".");
+            if(y<1 || z<y+2 || z+2>x.length)
+                {
+                    alert("Enter valid Email");
+                }
+               
+        }
+        </script>
+    </head>
+    <body>
+       
+        
+        <form>
+            First Name: <input type="text" id="fname"><br><br>
+            Last Name: <input type="text" id="lname"><br><br>
+            Phone: <input type="text" id="phone"><br><br>
+            Pincode: <input type="text" name="" id="zip"><br><br>
+            DOB: <input type="date" name="Age" id="dob"><br><br>
+            Country: <select id="country">
+                <option>Select country</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>China</option>
+                <option>Brazil</option>
+            </select><br><br>
+            Email: <input type="email" name="" id="email"><br><br>
+            Password: <input type="password" name="" id="pass"><br><br>
+            Re-Password: <input type="password" name="" id="pass1"><br><br>
+            
+            <input type="button" value="Submit" onclick="formvalide()">
+        </form>
+        
+    </body>
+</html>
